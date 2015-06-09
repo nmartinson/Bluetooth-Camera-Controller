@@ -695,20 +695,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         //Push appropriate viewcontroller onto the navcontroller
         var vc:UIViewController? = nil
         switch connectionMode {
-//        case ConnectionMode.PinIO:
-//            pinIoViewController = PinIOViewController(delegate: self)
-//            pinIoViewController.didConnect()
-//            vc = pinIoViewController
-//            break
-//        case ConnectionMode.UART:
-//            uartViewController = UARTViewController(aDelegate: self)
-//            uartViewController.didConnect()
-//            vc = uartViewController
-//            break
-//        case ConnectionMode.Info:
-//            deviceInfoViewController = DeviceInfoViewController(cbPeripheral: currentPeripheral!.currentPeripheral, delegate: self)
-//            vc = deviceInfoViewController
-//            break
         case ConnectionMode.Controller:
             controllerViewController = ControllerViewController(aDelegate: self)
             vc = controllerViewController

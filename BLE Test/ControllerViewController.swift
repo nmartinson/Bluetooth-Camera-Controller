@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import CoreMotion
 
 protocol ControllerViewControllerDelegate: HelpViewControllerDelegate {
     
@@ -17,7 +16,7 @@ protocol ControllerViewControllerDelegate: HelpViewControllerDelegate {
 
 class ControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    var dataSource = ["Control Pad", "Simple Trigger"]
     var delegate:UARTViewControllerDelegate?
     @IBOutlet var helpViewController:HelpViewController!
     @IBOutlet var controlPadViewController:UIViewController!
@@ -30,9 +29,7 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     var buttonColor:UIColor!
     var exitButtonColor:UIColor!
 
-    private let buttonPrefix = "!B"
-//    private let sensorQueue = dispatch_queue_create("com.adafruit.bluefruitconnect.sensorQueue", DISPATCH_QUEUE_SERIAL)
-    
+    private let buttonPrefix = "!B"    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,34 +98,34 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         var buttonView:UIButton?
         
-        if indexPath.section == 0{
-            cell.textLabel!.text = "Control Pad"
+//        if indexPath.row == 0{
+            cell.textLabel!.text = dataSource[indexPath.row]
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
             cell.selectionStyle = UITableViewCellSelectionStyle.Blue
             return cell
-        }
-        else {
-            cell.textLabel?.text = "Control Pad"
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            return cell
-        }
+//        }
+//        else {
+//            cell.textLabel?.text = "Control Pad"
+//            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+//            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+//            return cell
+//        }
     }
     
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return dataSource.count
     }
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
-        if indexPath.row == 0 {
+//        if indexPath.row == 0 {
             return 44.0
-        }
-        else {
-            return 28.0
-        }
+//        }
+//        else {
+//            return 28.0
+//        }
         
     }
     
@@ -144,17 +141,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
-    
-    func tableView(tableView: UITableView, indentationLevelForRowAtIndexPath indexPath: NSIndexPath) -> Int {
-        
-        if indexPath.row == 0 {
-            return 0
-        }
-        
-        else {
-            return 1
-        }
-    }
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -174,15 +160,21 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let nib = dataSource[indexPath.row].stringByReplacingOccurrencesOfString(" ", withString: "").stringByAppendingString("Controller")
+        println(nib)
+//        let view = NSBundle.mainBundle().loadNibNamed(nib, owner: self, options: nil).first as! UIViewController
+        var view = UIViewController(nibName: nib, bundle: nil) as UIViewController
+
         
-        if indexPath.section == 0 {
+//        if indexPath.section == 0 {
             tableView.deselectRowAtIndexPath(indexPath, animated: false)
-            self.navigationController?.pushViewController(controlPadViewController, animated: true)
+            self.navigationController?.pushViewController(view, animated: true)
+//            self.navigationController?.pushViewController(controlPadViewController, animated: true)
             
             if IS_IPHONE {  //Hide nav bar on iphone to conserve space
                 self.navigationController?.setNavigationBarHidden(true, animated: true)
             }
-        }
+//        }
         
     }
     

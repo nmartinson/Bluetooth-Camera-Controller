@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B522A5A1B2756B500A86676 /* BasicTriggerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A591B2756B500A86676 /* BasicTriggerController.xib */; };
+		2B522A5C1B27577800A86676 /* BasicTriggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A5B1B27577800A86676 /* BasicTriggerController.swift */; };
+		2B522A641B2771C000A86676 /* SimpleTriggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A621B2771C000A86676 /* SimpleTriggerController.swift */; };
+		2B522A651B2771C000A86676 /* SimpleTriggerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A631B2771C000A86676 /* SimpleTriggerController.xib */; };
 		F007EDBA1A3064B60023FCD6 /* ControllerViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */; };
 		F007EDC31A3191BC0023FCD6 /* ble-arrow_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */; };
 		F007EDC41A3191BC0023FCD6 /* ble-arrow_button_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */; };
@@ -97,6 +101,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B522A591B2756B500A86676 /* BasicTriggerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicTriggerController.xib; sourceTree = "<group>"; };
+		2B522A5B1B27577800A86676 /* BasicTriggerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriggerController.swift; sourceTree = "<group>"; };
+		2B522A621B2771C000A86676 /* SimpleTriggerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SimpleTriggerController.swift; sourceTree = "<group>"; };
+		2B522A631B2771C000A86676 /* SimpleTriggerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleTriggerController.xib; sourceTree = "<group>"; };
 		F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControllerViewController_iPad.xib; sourceTree = "<group>"; };
 		F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down.png"; sourceTree = "<group>"; };
 		F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down@2x.png"; sourceTree = "<group>"; };
@@ -211,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				F02F6EEA1A247F160080FFDF /* ControllerViewController_iPhone.xib */,
+				2B522A591B2756B500A86676 /* BasicTriggerController.xib */,
 				F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */,
 				F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */,
 				F07D973F19FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib */,
@@ -265,10 +274,13 @@
 				F0F889A81A009B81008AA257 /* BLEInfo.swift */,
 				F0BCF06519EBB881006086C6 /* BLEMainViewController.swift */,
 				F0F889AA1A00BD55008AA257 /* BLEPeripheral.swift */,
+				2B522A621B2771C000A86676 /* SimpleTriggerController.swift */,
+				2B522A631B2771C000A86676 /* SimpleTriggerController.xib */,
 				F02F6EE91A247F160080FFDF /* ControllerViewController.swift */,
 				F0DBB56819F4625800CB91E1 /* DeviceCell.swift */,
 				F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */,
 				F0718DFF19EE77F4002B5ABB /* DeviceListViewController.swift */,
+				2B522A5B1B27577800A86676 /* BasicTriggerController.swift */,
 				F0F9C4A819E25BF000AF2352 /* HelpViewController.swift */,
 				F0A2C97016BBE44500F2FD12 /* Supporting Files */,
 				F051AAD619DA96F7009A1383 /* UARTViewController.swift */,
@@ -476,9 +488,11 @@
 				F007EDF01A31A2350023FCD6 /* ble-button_pad_exit.png in Resources */,
 				F0C47C1D16C23CB3002EFADA /* CPModuleButtonStretchableDisabled@2x.png in Resources */,
 				F05E7E0318BEF399005E25F6 /* Images.xcassets in Resources */,
+				2B522A5A1B2756B500A86676 /* BasicTriggerController.xib in Resources */,
 				F0C47C2216C23FD3002EFADA /* adafruit_logo2012-embossDark.png in Resources */,
 				F0C47C2316C23FD3002EFADA /* adafruit_logo2012-embossDark@2x.png in Resources */,
 				F09E52D016D77CA800F1F37A /* cellGradient150h.png in Resources */,
+				2B522A651B2771C000A86676 /* SimpleTriggerController.xib in Resources */,
 				F007EDDA1A3195110023FCD6 /* ble-button_numbers-4@2x.png in Resources */,
 				F007EDE41A3196090023FCD6 /* ble-button_numbers-rotated-4.png in Resources */,
 				F007EDC51A3191BC0023FCD6 /* ble-arrow_button_left.png in Resources */,
@@ -505,6 +519,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F051AAD719DA96F7009A1383 /* UARTViewController.swift in Sources */,
+				2B522A5C1B27577800A86676 /* BasicTriggerController.swift in Sources */,
 				F0BCF06819EBDC59006086C6 /* BLEAppDelegate.swift in Sources */,
 				F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */,
 				F0F889AB1A00BD55008AA257 /* BLEPeripheral.swift in Sources */,
@@ -512,6 +527,7 @@
 				F0BCF06619EBB881006086C6 /* BLEMainViewController.swift in Sources */,
 				F02811C619ED19AA00D48BA5 /* Extensions.swift in Sources */,
 				F0F9C4A919E25BF000AF2352 /* HelpViewController.swift in Sources */,
+				2B522A641B2771C000A86676 /* SimpleTriggerController.swift in Sources */,
 				F060841019F4CF8F0058B4E4 /* AttributeCell.swift in Sources */,
 				F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */,
 				F07D974019FA46F200CA88CF /* DeviceInfoViewController.swift in Sources */,
