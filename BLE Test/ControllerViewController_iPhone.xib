@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ControllerViewController" customModule="BluetoothLE_Test" customModuleProvider="target">
@@ -11,7 +10,6 @@
                 <outlet property="controlTable" destination="5yi-v1-A24" id="eZ7-4a-DgY"/>
                 <outlet property="exitButton" destination="6Ng-4y-TJK" id="GAz-K4-Y8M"/>
                 <outlet property="helpViewController" destination="Srb-10-gh5" id="h1L-Y1-hfa"/>
-                <outlet property="valueCell" destination="np8-DO-2zs" id="UEj-Ae-YJm"/>
                 <outlet property="view" destination="3rz-3q-Ybm" id="wvT-4y-6ci"/>
                 <outletCollection property="buttons" destination="OXF-Qn-Zgq" collectionClass="NSMutableArray" id="3Bm-L7-vqV"/>
                 <outletCollection property="buttons" destination="mnu-aX-iOh" collectionClass="NSMutableArray" id="O67-tt-Yb0"/>
@@ -586,32 +584,6 @@ Note: Any activated sensor data streams will continue while using the Control Pa
             </connections>
             <point key="canvasLocation" x="-374" y="-15"/>
         </viewController>
-        <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="22" id="np8-DO-2zs" userLabel="Value Cell" customClass="SensorValueCell" customModule="BluetoothLE_Test" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="299" height="22"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="np8-DO-2zs" id="xnK-63-aZk">
-                <rect key="frame" x="0.0" y="0.0" width="299" height="147"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GOf-qd-xnC" userLabel="nameLabel">
-                        <rect key="frame" x="31" y="1" width="260" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="GOf-qd-xnC" firstAttribute="top" secondItem="xnK-63-aZk" secondAttribute="top" constant="1" id="6EG-Zy-C3B"/>
-                    <constraint firstAttribute="bottom" secondItem="GOf-qd-xnC" secondAttribute="bottom" id="cr8-ff-a9b"/>
-                    <constraint firstItem="GOf-qd-xnC" firstAttribute="trailing" secondItem="xnK-63-aZk" secondAttribute="trailingMargin" id="mZC-ke-3Cd"/>
-                    <constraint firstItem="GOf-qd-xnC" firstAttribute="trailing" secondItem="xnK-63-aZk" secondAttribute="trailingMargin" id="nKO-6T-X14"/>
-                    <constraint firstItem="GOf-qd-xnC" firstAttribute="leading" secondItem="xnK-63-aZk" secondAttribute="leadingMargin" constant="23" id="zuc-KC-U98"/>
-                </constraints>
-            </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-            <point key="canvasLocation" x="-200.5" y="-457"/>
-        </tableViewCell>
     </objects>
     <resources>
         <image name="ble-arrow_button_down.png" width="65" height="81"/>

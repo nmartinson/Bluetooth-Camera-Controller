@@ -86,7 +86,6 @@
 		F0C7709719FF8D25005391F6 /* signalStrength-3.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C7709219FF8D25005391F6 /* signalStrength-3.png */; };
 		F0C7709819FF8D25005391F6 /* signalStrength-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C7709319FF8D25005391F6 /* signalStrength-4.png */; };
 		F0CE1B9818A23FF8005F831A /* UARTViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */; };
-		F0D4AFB91A32505300E9063E /* SensorValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D4AFB71A32505300E9063E /* SensorValueCell.swift */; };
 		F0DBB56A19F4625800CB91E1 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB56819F4625800CB91E1 /* DeviceCell.swift */; };
 		F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E51AD21A9D41F30074339D /* ISColorWheel.m */; };
 		F0E51AD51A9D41F30074339D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0E51AD31A9D41F30074339D /* LICENSE.txt */; };
@@ -180,7 +179,6 @@
 		F0C7709219FF8D25005391F6 /* signalStrength-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signalStrength-3.png"; sourceTree = "<group>"; };
 		F0C7709319FF8D25005391F6 /* signalStrength-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signalStrength-4.png"; sourceTree = "<group>"; };
 		F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UARTViewController_iPad.xib; sourceTree = "<group>"; };
-		F0D4AFB71A32505300E9063E /* SensorValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorValueCell.swift; sourceTree = "<group>"; };
 		F0DBB56819F4625800CB91E1 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		F0E51AD11A9D41F30074339D /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		F0E51AD21A9D41F30074339D /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
@@ -265,7 +263,6 @@
 				F0E51AD01A9D41F30074339D /* ISColorWheel */,
 				F060840F19F4CF8F0058B4E4 /* AttributeCell.swift */,
 				F0BCF06719EBDC59006086C6 /* BLEAppDelegate.swift */,
-				F0D4AFB71A32505300E9063E /* SensorValueCell.swift */,
 				F0B7D14219F1081B00DFDDBE /* BLEDevice.swift */,
 				F0F889A81A009B81008AA257 /* BLEInfo.swift */,
 				F0BCF06519EBB881006086C6 /* BLEMainViewController.swift */,
@@ -511,7 +508,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F051AAD719DA96F7009A1383 /* UARTViewController.swift in Sources */,
-				F0D4AFB91A32505300E9063E /* SensorValueCell.swift in Sources */,
 				F0BCF06819EBDC59006086C6 /* BLEAppDelegate.swift in Sources */,
 				F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */,
 				F0F889AB1A00BD55008AA257 /* BLEPeripheral.swift in Sources */,

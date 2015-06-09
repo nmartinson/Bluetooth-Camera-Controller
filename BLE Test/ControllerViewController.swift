@@ -24,7 +24,7 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var buttons:[UIButton]!
     @IBOutlet var exitButton:UIButton!
     @IBOutlet var controlTable:UITableView!
-    @IBOutlet var valueCell:SensorValueCell!
+//    @IBOutlet var valueCell:SensorValueCell!
     
 //    var accelButton:BLESensorButton!
     var buttonColor:UIColor!

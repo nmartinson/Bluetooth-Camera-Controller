@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
@@ -11,7 +11,6 @@
                 <outlet property="controlTable" destination="VmD-PO-K55" id="lFS-dp-vb8"/>
                 <outlet property="exitButton" destination="bxQ-e1-A96" id="x3O-mi-zlg"/>
                 <outlet property="helpViewController" destination="GuP-KN-7UX" id="Myt-Iu-HLE"/>
-                <outlet property="valueCell" destination="IFy-LR-hdK" id="c4X-zF-ZR5"/>
                 <outlet property="view" destination="ebY-yk-kZI" id="pRb-Y4-RGS"/>
                 <outletCollection property="buttons" destination="qca-do-tEE" collectionClass="NSMutableArray" id="Hq5-j2-X2z"/>
                 <outletCollection property="buttons" destination="DF3-DN-IPv" collectionClass="NSMutableArray" id="z6d-a3-ezV"/>
@@ -596,32 +595,6 @@ Note: Any activated sensor data streams will continue while using the Control Pa
             </connections>
             <point key="canvasLocation" x="108" y="205"/>
         </tableViewController>
-        <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" shouldIndentWhileEditing="NO" rowHeight="22" id="IFy-LR-hdK" userLabel="Value Cell" customClass="SensorValueCell" customModule="BluetoothLE_Test" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="299" height="22"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IFy-LR-hdK" id="hik-l6-cdO">
-                <rect key="frame" x="0.0" y="0.0" width="299" height="147"/>
-                <autoresizingMask key="autoresizingMask"/>
-                <subviews>
-                    <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="100" contentMode="left" text="--" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcA-x7-bZH" userLabel="nameLabel">
-                        <rect key="frame" x="31" y="-3" width="260" height="20"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    </label>
-                </subviews>
-                <constraints>
-                    <constraint firstItem="wcA-x7-bZH" firstAttribute="trailing" secondItem="hik-l6-cdO" secondAttribute="trailingMargin" id="CAu-IB-pjM"/>
-                    <constraint firstAttribute="bottom" secondItem="wcA-x7-bZH" secondAttribute="bottom" constant="4" id="Cy9-vu-neL"/>
-                    <constraint firstItem="wcA-x7-bZH" firstAttribute="top" secondItem="hik-l6-cdO" secondAttribute="top" constant="-3" id="XSp-mU-AO5"/>
-                    <constraint firstItem="wcA-x7-bZH" firstAttribute="trailing" secondItem="hik-l6-cdO" secondAttribute="trailingMargin" id="aOI-mE-psQ"/>
-                    <constraint firstItem="wcA-x7-bZH" firstAttribute="leading" secondItem="hik-l6-cdO" secondAttribute="leadingMargin" constant="23" id="eb6-Wm-Hfc"/>
-                </constraints>
-            </tableViewCellContentView>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-            <point key="canvasLocation" x="-303.5" y="-74"/>
-        </tableViewCell>
     </objects>
     <resources>
         <image name="ble-arrow_button_down.png" width="65" height="81"/>
