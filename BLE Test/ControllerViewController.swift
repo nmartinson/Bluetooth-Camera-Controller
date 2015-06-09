@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol ControllerViewControllerDelegate: HelpViewControllerDelegate {
+protocol ControllerViewControllerDelegate{//: HelpViewControllerDelegate {
     func sendData(newData:NSData)
 }
 

@@ -18,7 +18,7 @@ enum ConnectionMode:Int {
     case Controller
 }
 
-class BLEMainViewController : UIViewController, UINavigationControllerDelegate, HelpViewControllerDelegate, CBCentralManagerDelegate,
+class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/* HelpViewControllerDelegate,*/ CBCentralManagerDelegate,
                               BLEPeripheralDelegate, UARTViewControllerDelegate, UIAlertViewDelegate,
                               DeviceListViewControllerDelegate {
 
@@ -41,7 +41,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     @IBOutlet var infoButton:UIButton!
     @IBOutlet var warningLabel:UILabel!
     
-    @IBOutlet var helpViewController:HelpViewController!
+//    @IBOutlet var helpViewController:HelpViewController!
     
     private var cm:CBCentralManager?
     private var currentAlertView:UIAlertView?
@@ -153,19 +153,19 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     //MARK: UI etc
     
-    func helpViewControllerDidFinish(controller: HelpViewController) {
-        
-        //Called when help view's done button is tapped
-        
-        if (IS_IPHONE) {
-//            dismissViewControllerAnimated(true, completion: nil)
-        }
-            
-        else {
-//            helpPopoverController?.dismissPopoverAnimated(true)
-        }
-        
-    }
+//    func helpViewControllerDidFinish(controller: HelpViewController) {
+//        
+//        //Called when help view's done button is tapped
+//        
+//        if (IS_IPHONE) {
+////            dismissViewControllerAnimated(true, completion: nil)
+//        }
+//            
+//        else {
+////            helpPopoverController?.dismissPopoverAnimated(true)
+//        }
+//        
+//    }
     
     
     func createDeviceListViewController(){

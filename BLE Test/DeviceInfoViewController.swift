@@ -17,8 +17,8 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet var headerView:UIView!
     @IBOutlet var peripheralNameLabel:UILabel!
 //    @IBOutlet var peripheralUUIDLabel:UILabel!
-    @IBOutlet var helpViewController:HelpViewController!
-    var delegate:HelpViewControllerDelegate?
+//    @IBOutlet var helpViewController:HelpViewController!
+//    var delegate:HelpViewControllerDelegate?
 //    @IBOutlet var serviceCell:UITableViewCell!
 //    @IBOutlet var characteristicCell:UITableViewCell!
     let serviceCellIdentifier = "serviceCell"
@@ -27,7 +27,7 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
     var gattDict:Dictionary<String,String>? //known UUID reference
     var serviceToggle:[Bool]!    //individual ref for service is open in table
     
-    convenience init(cbPeripheral:CBPeripheral, delegate:HelpViewControllerDelegate){
+    convenience init(cbPeripheral:CBPeripheral){//, delegate:HelpViewControllerDelegate){
         
         //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
         
@@ -43,7 +43,7 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         self.init(nibName: nibName as String, bundle: NSBundle.mainBundle())
         
         self.peripheral = cbPeripheral
-        self.delegate = delegate
+//        self.delegate = delegate
         
         if let path = NSBundle.mainBundle().pathForResource("GATT-characteristics", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, String> {
@@ -82,7 +82,7 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         
         super.viewDidLoad()
 
-        self.helpViewController.delegate = delegate
+//        self.helpViewController.delegate = delegate
         self.title = peripheral.name
         
         let tvc = UITableViewController(style: UITableViewStyle.Plain)

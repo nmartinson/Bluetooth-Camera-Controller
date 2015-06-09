@@ -94,7 +94,6 @@
 		F0ED2E471A010EC7009A5061 /* DeviceInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */; };
 		F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F889A81A009B81008AA257 /* BLEInfo.swift */; };
 		F0F889AB1A00BD55008AA257 /* BLEPeripheral.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F889AA1A00BD55008AA257 /* BLEPeripheral.swift */; };
-		F0F9C4A919E25BF000AF2352 /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F9C4A819E25BF000AF2352 /* HelpViewController.swift */; };
 		F0FB078818C02D9800D263DD /* UARTViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0FB078718C02D9800D263DD /* UARTViewController_iPhone.xib */; };
 /* End PBXBuildFile section */
 
@@ -189,7 +188,6 @@
 		F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInfoViewController_iPad.xib; sourceTree = "<group>"; };
 		F0F889A81A009B81008AA257 /* BLEInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEInfo.swift; sourceTree = "<group>"; };
 		F0F889AA1A00BD55008AA257 /* BLEPeripheral.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEPeripheral.swift; sourceTree = "<group>"; };
-		F0F9C4A819E25BF000AF2352 /* HelpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpViewController.swift; sourceTree = "<group>"; };
 		F0F9E3721A77A3A000DBCCE4 /* BluetoothLE Test-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BluetoothLE Test-Bridging-Header.h"; sourceTree = "<group>"; };
 		F0F9E3731A77A51300DBCCE4 /* BluetoothLE Test-prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BluetoothLE Test-prefix.pch"; sourceTree = "<group>"; };
 		F0FB078718C02D9800D263DD /* UARTViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UARTViewController_iPhone.xib; sourceTree = "<group>"; };
@@ -275,7 +273,6 @@
 				F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */,
 				F0718DFF19EE77F4002B5ABB /* DeviceListViewController.swift */,
 				2B522A5B1B27577800A86676 /* BasicTriggerController.swift */,
-				F0F9C4A819E25BF000AF2352 /* HelpViewController.swift */,
 				F0A2C97016BBE44500F2FD12 /* Supporting Files */,
 				F051AAD619DA96F7009A1383 /* UARTViewController.swift */,
 				F08BFF4718A4F7E600EF43FB /* UI */,
@@ -519,7 +516,6 @@
 				F0718E0019EE77F4002B5ABB /* DeviceListViewController.swift in Sources */,
 				F0BCF06619EBB881006086C6 /* BLEMainViewController.swift in Sources */,
 				F02811C619ED19AA00D48BA5 /* Extensions.swift in Sources */,
-				F0F9C4A919E25BF000AF2352 /* HelpViewController.swift in Sources */,
 				F060841019F4CF8F0058B4E4 /* AttributeCell.swift in Sources */,
 				F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */,
 				F07D974019FA46F200CA88CF /* DeviceInfoViewController.swift in Sources */,
