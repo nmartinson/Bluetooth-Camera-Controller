@@ -19,7 +19,7 @@ enum ConnectionMode:Int {
 }
 
 class BLEMainViewController : UIViewController, UINavigationControllerDelegate, HelpViewControllerDelegate, CBCentralManagerDelegate,
-                              BLEPeripheralDelegate, UARTViewControllerDelegate, PinIOViewControllerDelegate, UIAlertViewDelegate,
+                              BLEPeripheralDelegate, UARTViewControllerDelegate, UIAlertViewDelegate,
                               DeviceListViewControllerDelegate {
 
     
@@ -35,7 +35,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     var connectionStatus:ConnectionStatus = ConnectionStatus.Idle
     var helpPopoverController:UIPopoverController?
     var navController:UINavigationController!
-    var pinIoViewController:PinIOViewController!
     var uartViewController:UARTViewController!
     var deviceListViewController:DeviceListViewController!
     var deviceInfoViewController:DeviceInfoViewController!
@@ -280,20 +279,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         
         var hvc:HelpViewController
         
-        if navController.topViewController.isKindOfClass(PinIOViewController){
-            hvc = pinIoViewController.helpViewController
-        }
-            
-        else if navController.topViewController.isKindOfClass(UARTViewController){
-            hvc = uartViewController.helpViewController
-        }
-        else if navController.topViewController.isKindOfClass(DeviceListViewController){
-            hvc = deviceListViewController.helpViewController
-        }
-        else if navController.topViewController.isKindOfClass(DeviceInfoViewController){
-            hvc = deviceInfoViewController.helpViewController
-        }
-        else if navController.topViewController.isKindOfClass(ControllerViewController){
+        if navController.topViewController.isKindOfClass(ControllerViewController){
             hvc = controllerViewController.helpViewController
         }
             
@@ -316,18 +302,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
             
             //iPad
         else if (IS_IPAD) {
-            
-            //close popover it is being shown
-//            if helpPopoverController != nil {
-//                if helpPopoverController!.popoverVisible {
-//                    helpPopoverController?.dismissPopoverAnimated(true)
-//                    helpPopoverController = nil
-//                }
-//                
-//            }
-            
-                //show popover if it isn't shown
-//            else {
             helpPopoverController?.dismissPopoverAnimated(true)
             
                 helpPopoverController = UIPopoverController(contentViewController: currentHelpViewController())
@@ -515,7 +489,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
             
             // Returning from Controller
             else if connectionMode == ConnectionMode.Controller {
-                controllerViewController?.stopSensorUpdates()
+//                controllerViewController?.stopSensorUpdates()
                 if connectionStatus == ConnectionStatus.Connected {
                     disconnect()
                 }
@@ -669,8 +643,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     func dereferenceModeController() {
         
-        pinIoViewController = nil
-        uartViewController = nil
+//        uartViewController = nil
         deviceInfoViewController = nil
         
     }
@@ -679,10 +652,10 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     func isModuleController(anObject:AnyObject)->Bool{
         
         var verdict = false
-        if     anObject.isMemberOfClass(PinIOViewController)
-            || anObject.isMemberOfClass(UARTViewController)
-            || anObject.isMemberOfClass(DeviceInfoViewController)
-            || anObject.isMemberOfClass(ControllerViewController)
+//        if     anObject.isMemberOfClass(PinIOViewController)
+//            || anObject.isMemberOfClass(UARTViewController)
+//            || anObject.isMemberOfClass(DeviceInfoViewController)
+        if anObject.isMemberOfClass(ControllerViewController)
             || (anObject.title == "Control Pad")
             || (anObject.title == "Color Picker") {
                 verdict = true
@@ -722,20 +695,20 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         //Push appropriate viewcontroller onto the navcontroller
         var vc:UIViewController? = nil
         switch connectionMode {
-        case ConnectionMode.PinIO:
-            pinIoViewController = PinIOViewController(delegate: self)
-            pinIoViewController.didConnect()
-            vc = pinIoViewController
-            break
-        case ConnectionMode.UART:
-            uartViewController = UARTViewController(aDelegate: self)
-            uartViewController.didConnect()
-            vc = uartViewController
-            break
-        case ConnectionMode.Info:
-            deviceInfoViewController = DeviceInfoViewController(cbPeripheral: currentPeripheral!.currentPeripheral, delegate: self)
-            vc = deviceInfoViewController
-            break
+//        case ConnectionMode.PinIO:
+//            pinIoViewController = PinIOViewController(delegate: self)
+//            pinIoViewController.didConnect()
+//            vc = pinIoViewController
+//            break
+//        case ConnectionMode.UART:
+//            uartViewController = UARTViewController(aDelegate: self)
+//            uartViewController.didConnect()
+//            vc = uartViewController
+//            break
+//        case ConnectionMode.Info:
+//            deviceInfoViewController = DeviceInfoViewController(cbPeripheral: currentPeripheral!.currentPeripheral, delegate: self)
+//            vc = deviceInfoViewController
+//            break
         case ConnectionMode.Controller:
             controllerViewController = ControllerViewController(aDelegate: self)
             vc = controllerViewController
@@ -773,23 +746,23 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         
         printLog(self, "didReceiveData", "\(newData.stringRepresentation())")
         
-        if (connectionStatus == ConnectionStatus.Connected ) {
-            //UART
-            if (connectionMode == ConnectionMode.UART) {
-                //send data to UART Controller
-                uartViewController.receiveData(newData)
-            }
-                
-                //Pin I/O
-            else if (connectionMode == ConnectionMode.PinIO) {
-                //send data to PIN IO Controller
-                pinIoViewController.receiveData(newData)
-            }
-        }
-        else {
-            printLog(self, "didReceiveData", "Received data without connection")
-        }
-        
+//        if (connectionStatus == ConnectionStatus.Connected ) {
+//            //UART
+//            if (connectionMode == ConnectionMode.UART) {
+//                //send data to UART Controller
+//                uartViewController.receiveData(newData)
+//            }
+//                
+//                //Pin I/O
+//            else if (connectionMode == ConnectionMode.PinIO) {
+//                //send data to PIN IO Controller
+//                pinIoViewController.receiveData(newData)
+//            }
+//        }
+//        else {
+//            printLog(self, "didReceiveData", "Received data without connection")
+//        }
+    
     }
     
     

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B522A581B27331400A86676 /* SensorValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A571B27331400A86676 /* SensorValueCell.xib */; };
 		F007EDBA1A3064B60023FCD6 /* ControllerViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */; };
 		F007EDC31A3191BC0023FCD6 /* ble-arrow_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */; };
 		F007EDC41A3191BC0023FCD6 /* ble-arrow_button_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */; };
@@ -50,7 +51,6 @@
 		F07D973D19F98B9F00CA88CF /* DeviceListViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07D973C19F98B9F00CA88CF /* DeviceListViewController_iPad.xib */; };
 		F07D974019FA46F200CA88CF /* DeviceInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */; };
 		F07D974119FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = F07D973F19FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib */; };
-		F08849D119E47EE6002B442A /* PinIOViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F08849D019E47EE6002B442A /* PinIOViewController.swift */; };
 		F08ACA6B16DD0C0400A377D1 /* cellGradient3-150h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F08ACA6916DD0C0400A377D1 /* cellGradient3-150h@2x.png */; };
 		F08ACA6C16DD0C0400A377D1 /* cellGradient3-150h.png in Resources */ = {isa = PBXBuildFile; fileRef = F08ACA6A16DD0C0400A377D1 /* cellGradient3-150h.png */; };
 		F09E52D016D77CA800F1F37A /* cellGradient150h.png in Resources */ = {isa = PBXBuildFile; fileRef = F09E52CF16D77CA800F1F37A /* cellGradient150h.png */; };
@@ -92,7 +92,6 @@
 		F0C7709819FF8D25005391F6 /* signalStrength-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C7709319FF8D25005391F6 /* signalStrength-4.png */; };
 		F0CE1B9818A23FF8005F831A /* UARTViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */; };
 		F0D4AFB91A32505300E9063E /* SensorValueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D4AFB71A32505300E9063E /* SensorValueCell.swift */; };
-		F0D4AFBA1A32505300E9063E /* SensorValueCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0D4AFB81A32505300E9063E /* SensorValueCell.xib */; };
 		F0DBB56A19F4625800CB91E1 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB56819F4625800CB91E1 /* DeviceCell.swift */; };
 		F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E51AD21A9D41F30074339D /* ISColorWheel.m */; };
 		F0E51AD51A9D41F30074339D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0E51AD31A9D41F30074339D /* LICENSE.txt */; };
@@ -107,6 +106,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2B522A571B27331400A86676 /* SensorValueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorValueCell.xib; sourceTree = "<group>"; };
 		F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ControllerViewController_iPad.xib; sourceTree = "<group>"; };
 		F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down.png"; sourceTree = "<group>"; };
 		F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down@2x.png"; sourceTree = "<group>"; };
@@ -150,7 +150,6 @@
 		F07D973C19F98B9F00CA88CF /* DeviceListViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceListViewController_iPad.xib; sourceTree = "<group>"; };
 		F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceInfoViewController.swift; sourceTree = "<group>"; };
 		F07D973F19FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInfoViewController_iPhone.xib; sourceTree = "<group>"; };
-		F08849D019E47EE6002B442A /* PinIOViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PinIOViewController.swift; sourceTree = "<group>"; };
 		F08ACA6916DD0C0400A377D1 /* cellGradient3-150h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellGradient3-150h@2x.png"; sourceTree = "<group>"; };
 		F08ACA6A16DD0C0400A377D1 /* cellGradient3-150h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellGradient3-150h.png"; sourceTree = "<group>"; };
 		F09E52CF16D77CA800F1F37A /* cellGradient150h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellGradient150h.png; sourceTree = "<group>"; };
@@ -194,7 +193,6 @@
 		F0C7709319FF8D25005391F6 /* signalStrength-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signalStrength-4.png"; sourceTree = "<group>"; };
 		F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UARTViewController_iPad.xib; sourceTree = "<group>"; };
 		F0D4AFB71A32505300E9063E /* SensorValueCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SensorValueCell.swift; sourceTree = "<group>"; };
-		F0D4AFB81A32505300E9063E /* SensorValueCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SensorValueCell.xib; sourceTree = "<group>"; };
 		F0DBB56819F4625800CB91E1 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
 		F0E51AD11A9D41F30074339D /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
 		F0E51AD21A9D41F30074339D /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
@@ -230,11 +228,11 @@
 		F08BFF4718A4F7E600EF43FB /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				F0D4AFB81A32505300E9063E /* SensorValueCell.xib */,
 				F02F6EEA1A247F160080FFDF /* ControllerViewController_iPhone.xib */,
 				F007EDB91A3064B60023FCD6 /* ControllerViewController_iPad.xib */,
 				F07481581A725E8800A45EF7 /* ColorPickerViewController_iPad.xib */,
 				F0F9E3741A78E26000DBCCE4 /* ColorPickerViewController_iPhone.xib */,
+				2B522A571B27331400A86676 /* SensorValueCell.xib */,
 				F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */,
 				F07D973F19FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib */,
 				F0A2C98A16BBE44500F2FD12 /* BLEMainViewController_iPad.xib */,
@@ -299,7 +297,6 @@
 				F0718DFF19EE77F4002B5ABB /* DeviceListViewController.swift */,
 				F0F9C4A819E25BF000AF2352 /* HelpViewController.swift */,
 				F0F5865C19E7C8AB0000E544 /* PinCell.swift */,
-				F08849D019E47EE6002B442A /* PinIOViewController.swift */,
 				F0A2C97016BBE44500F2FD12 /* Supporting Files */,
 				F051AAD619DA96F7009A1383 /* UARTViewController.swift */,
 				F08BFF4718A4F7E600EF43FB /* UI */,
@@ -431,7 +428,7 @@
 				ORGANIZATIONNAME = "Adafruit Industries";
 				TargetAttributes = {
 					F0A2C96516BBE44500F2FD12 = {
-						DevelopmentTeam = 2X94RM7457;
+						DevelopmentTeam = B782ML49FF;
 					};
 				};
 			};
@@ -495,7 +492,6 @@
 				F007EDC81A3191BC0023FCD6 /* ble-arrow_button_right@2x.png in Resources */,
 				F007EDEF1A31A2350023FCD6 /* ble-button_pad_exit@2x.png in Resources */,
 				F0C7709419FF8D25005391F6 /* signalStrength-0.png in Resources */,
-				F0D4AFBA1A32505300E9063E /* SensorValueCell.xib in Resources */,
 				F007EDE81A3196090023FCD6 /* ble-button_numbers-rotated-2.png in Resources */,
 				F0C47C0D16C2362E002EFADA /* adafruit_logo2012-white-horiz-230w.png in Resources */,
 				F0C47C1816C23CB3002EFADA /* CPGridButtonStretchable.png in Resources */,
@@ -517,6 +513,7 @@
 				F007EDE41A3196090023FCD6 /* ble-button_numbers-rotated-4.png in Resources */,
 				F007EDC51A3191BC0023FCD6 /* ble-arrow_button_left.png in Resources */,
 				F007EDF21A31A2350023FCD6 /* ble-button_pad_exit_rotated.png in Resources */,
+				2B522A581B27331400A86676 /* SensorValueCell.xib in Resources */,
 				F007EDD71A3195110023FCD6 /* ble-button_numbers-3.png in Resources */,
 				F09E52D216D7814600F1F37A /* cellGradient2-150h.png in Resources */,
 				F007EDE51A3196090023FCD6 /* ble-button_numbers-rotated-3@2x.png in Resources */,
@@ -542,7 +539,6 @@
 				F051AAD719DA96F7009A1383 /* UARTViewController.swift in Sources */,
 				F0D4AFB91A32505300E9063E /* SensorValueCell.swift in Sources */,
 				F07481591A725E8800A45EF7 /* ColorPickerViewController.swift in Sources */,
-				F08849D119E47EE6002B442A /* PinIOViewController.swift in Sources */,
 				F0BCF06819EBDC59006086C6 /* BLEAppDelegate.swift in Sources */,
 				F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */,
 				F0F889AB1A00BD55008AA257 /* BLEPeripheral.swift in Sources */,
