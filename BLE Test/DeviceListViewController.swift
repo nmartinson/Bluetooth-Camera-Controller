@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreBluetooth
 
-protocol DeviceListViewControllerDelegate:/* HelpViewControllerDelegate,*/ UIAlertViewDelegate {
+protocol DeviceListViewControllerDelegate: UIAlertViewDelegate {
     
     var connectionMode:ConnectionMode { get }
     var warningLabel:UILabel! { get }
@@ -23,7 +23,6 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
     
     var delegate:DeviceListViewControllerDelegate?
     @IBOutlet var tableView:UITableView!
-//    @IBOutlet var helpViewController:HelpViewController!
     @IBOutlet var deviceCell:DeviceCell!
     @IBOutlet var attributeCell:AttributeCell!
     var devices:[BLEDevice] = []
@@ -32,9 +31,6 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
     
     
     convenience init(aDelegate:DeviceListViewControllerDelegate){
-        
-        //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
-        
         var nibName:NSString
         
         if IS_IPHONE{
@@ -62,7 +58,6 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         tableView.separatorStyle = UITableViewCellSeparatorStyle.None
-//        self.helpViewController.delegate = delegate
         
         //Add pull-to-refresh functionality
         let tvc = UITableViewController(style: UITableViewStyle.Plain)

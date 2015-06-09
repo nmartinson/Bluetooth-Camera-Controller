@@ -11,23 +11,18 @@
 import UIKit
 import CoreBluetooth
 
-class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{//, HelpViewControllerDelegate{
+class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet var tableView:UITableView!
     @IBOutlet var headerView:UIView!
     @IBOutlet var peripheralNameLabel:UILabel!
-//    @IBOutlet var peripheralUUIDLabel:UILabel!
-//    @IBOutlet var helpViewController:HelpViewController!
-//    var delegate:HelpViewControllerDelegate?
-//    @IBOutlet var serviceCell:UITableViewCell!
-//    @IBOutlet var characteristicCell:UITableViewCell!
     let serviceCellIdentifier = "serviceCell"
     let characteristicCellIdentifier = "characteristicCell"
     var peripheral:CBPeripheral!
     var gattDict:Dictionary<String,String>? //known UUID reference
     var serviceToggle:[Bool]!    //individual ref for service is open in table
     
-    convenience init(cbPeripheral:CBPeripheral){//, delegate:HelpViewControllerDelegate){
+    convenience init(cbPeripheral:CBPeripheral){
         
         //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
         
@@ -43,7 +38,6 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         self.init(nibName: nibName as String, bundle: NSBundle.mainBundle())
         
         self.peripheral = cbPeripheral
-//        self.delegate = delegate
         
         if let path = NSBundle.mainBundle().pathForResource("GATT-characteristics", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, String> {
@@ -55,34 +49,9 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         
     }
     
-    
-    //FOR SCREENSHOTS
-//    convenience init(delegate:HelpViewControllerDelegate){
-//        
-//        //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
-//        
-//        var nibName:NSString
-//        
-//        if IS_IPHONE{
-//            nibName = "DeviceInfoViewController_iPhone"
-//        }
-//        else{   //IPAD
-//            nibName = "DeviceInfoViewController_iPad"
-//        }
-//        
-//        self.init(nibName: nibName, bundle: NSBundle.mainBundle())
-//        
-//        self.peripheral = CBPeripheral()
-//        
-//        self.delegate = delegate
-//    }
-    
-    
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-//        self.helpViewController.delegate = delegate
         self.title = peripheral.name
         
         let tvc = UITableViewController(style: UITableViewStyle.Plain)
@@ -90,9 +59,6 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         
         
         peripheralNameLabel.text = peripheral.name
-//        peripheralUUIDLabel.text = "UUID: " + peripheral.identifier.UUIDString
-        
-        // … and add \(__FUNCTION__) to printLogs
     }
 
     
@@ -212,12 +178,6 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
                 attributePathArray.append(NSIndexPath(forRow: i, inSection: indexPath.section))
             }
             
-            //make cell background blue
-//            tableView.cellForRowAtIndexPath(indexPath)?.backgroundColor = cellSelectionColor
-//            let cell = tableView.cellForRowAtIndexPath(indexPath)!
-//            UIView.animateWithDuration(0.25, animations: { () -> Void in
-//                cell.backgroundColor = UIColor.whiteColor()
-//            })
             animateCellSelection(tableView.cellForRowAtIndexPath(indexPath)!)
             
             tableView.beginUpdates()
@@ -232,18 +192,7 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
             tableView.endUpdates()
             
         }
-        
-        
-//        tableView.beginUpdates()
-//        tableView.reloadSection(NSIndexSet(indexesInRange: NSMakeRange(section, section)), withRowAnimation: UITableViewRowAnimation.Fade)
-//        serviceToggle[section] = !serviceToggle[section]
-//        tableView.endUpdates()
     }
-    
-    
-//    func helpViewControllerDidFinish(controller : HelpViewController){
-//        
-//    }
 
     
     func displayNameforUUID(uuid:CBUUID)->String {

@@ -88,8 +88,6 @@
 		F0C7709819FF8D25005391F6 /* signalStrength-4.png in Resources */ = {isa = PBXBuildFile; fileRef = F0C7709319FF8D25005391F6 /* signalStrength-4.png */; };
 		F0CE1B9818A23FF8005F831A /* UARTViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */; };
 		F0DBB56A19F4625800CB91E1 /* DeviceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0DBB56819F4625800CB91E1 /* DeviceCell.swift */; };
-		F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */ = {isa = PBXBuildFile; fileRef = F0E51AD21A9D41F30074339D /* ISColorWheel.m */; };
-		F0E51AD51A9D41F30074339D /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = F0E51AD31A9D41F30074339D /* LICENSE.txt */; };
 		F0E75DDF1A1DE81F0025FBC2 /* GATT-characteristics.plist in Resources */ = {isa = PBXBuildFile; fileRef = F0E75DDE1A1DE81F0025FBC2 /* GATT-characteristics.plist */; };
 		F0ED2E471A010EC7009A5061 /* DeviceInfoViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */; };
 		F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F889A81A009B81008AA257 /* BLEInfo.swift */; };
@@ -181,9 +179,6 @@
 		F0C7709319FF8D25005391F6 /* signalStrength-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "signalStrength-4.png"; sourceTree = "<group>"; };
 		F0CE1B9618A23FF8005F831A /* UARTViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UARTViewController_iPad.xib; sourceTree = "<group>"; };
 		F0DBB56819F4625800CB91E1 /* DeviceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceCell.swift; sourceTree = "<group>"; };
-		F0E51AD11A9D41F30074339D /* ISColorWheel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISColorWheel.h; sourceTree = "<group>"; };
-		F0E51AD21A9D41F30074339D /* ISColorWheel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISColorWheel.m; sourceTree = "<group>"; };
-		F0E51AD31A9D41F30074339D /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		F0E75DDE1A1DE81F0025FBC2 /* GATT-characteristics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GATT-characteristics.plist"; sourceTree = "<group>"; };
 		F0ED2E461A010EC6009A5061 /* DeviceInfoViewController_iPad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DeviceInfoViewController_iPad.xib; sourceTree = "<group>"; };
 		F0F889A81A009B81008AA257 /* BLEInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLEInfo.swift; sourceTree = "<group>"; };
@@ -261,7 +256,6 @@
 		F0A2C96F16BBE44500F2FD12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				F0E51AD01A9D41F30074339D /* ISColorWheel */,
 				F060840F19F4CF8F0058B4E4 /* AttributeCell.swift */,
 				F0BCF06719EBDC59006086C6 /* BLEAppDelegate.swift */,
 				F0B7D14219F1081B00DFDDBE /* BLEDevice.swift */,
@@ -363,16 +357,6 @@
 			name = Buttons;
 			sourceTree = "<group>";
 		};
-		F0E51AD01A9D41F30074339D /* ISColorWheel */ = {
-			isa = PBXGroup;
-			children = (
-				F0E51AD11A9D41F30074339D /* ISColorWheel.h */,
-				F0E51AD21A9D41F30074339D /* ISColorWheel.m */,
-				F0E51AD31A9D41F30074339D /* LICENSE.txt */,
-			);
-			path = ISColorWheel;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -441,7 +425,6 @@
 				F007EDE31A3196090023FCD6 /* ble-button_numbers-rotated-4@2x.png in Resources */,
 				F007EDCA1A3191BC0023FCD6 /* ble-arrow_button_up@2x.png in Resources */,
 				F0A2C97E16BBE44500F2FD12 /* Default@2x.png in Resources */,
-				F0E51AD51A9D41F30074339D /* LICENSE.txt in Resources */,
 				F0A2C98016BBE44500F2FD12 /* Default-568h@2x.png in Resources */,
 				F0A2C98916BBE44500F2FD12 /* BLEMainViewController_iPhone.xib in Resources */,
 				F007EDE91A3196090023FCD6 /* ble-button_numbers-rotated-1@2x.png in Resources */,
@@ -517,7 +500,6 @@
 				F0BCF06619EBB881006086C6 /* BLEMainViewController.swift in Sources */,
 				F02811C619ED19AA00D48BA5 /* Extensions.swift in Sources */,
 				F060841019F4CF8F0058B4E4 /* AttributeCell.swift in Sources */,
-				F0E51AD41A9D41F30074339D /* ISColorWheel.m in Sources */,
 				F07D974019FA46F200CA88CF /* DeviceInfoViewController.swift in Sources */,
 				F02F6EEB1A247F160080FFDF /* ControllerViewController.swift in Sources */,
 				F0A94FDC19DBE68800C8A37E /* Constants.swift in Sources */,

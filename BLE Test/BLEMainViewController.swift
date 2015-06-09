@@ -18,7 +18,7 @@ enum ConnectionMode:Int {
     case Controller
 }
 
-class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/* HelpViewControllerDelegate,*/ CBCentralManagerDelegate,
+class BLEMainViewController : UIViewController, UINavigationControllerDelegate, CBCentralManagerDelegate,
                               BLEPeripheralDelegate, UARTViewControllerDelegate, UIAlertViewDelegate,
                               DeviceListViewControllerDelegate {
 
@@ -32,7 +32,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/
     
     var connectionMode:ConnectionMode = ConnectionMode.DeviceList
     var connectionStatus:ConnectionStatus = ConnectionStatus.Idle
-//    var helpPopoverController:UIPopoverController?
     var navController:UINavigationController!
     var uartViewController:UARTViewController!
     var deviceListViewController:DeviceListViewController!
@@ -40,8 +39,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/
     var controllerViewController:ControllerViewController!
     @IBOutlet var infoButton:UIButton!
     @IBOutlet var warningLabel:UILabel!
-    
-//    @IBOutlet var helpViewController:HelpViewController!
     
     private var cm:CBCentralManager?
     private var currentAlertView:UIAlertView?
@@ -118,14 +115,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/
             view.addSubview(navController.view)
         }
         
-        
-        //FOR SCREENSHOTS
-//        connectionMode = ConnectionMode.Info
-//        connectionStatus = ConnectionStatus.Connected
-//        deviceInfoViewController = DeviceInfoViewController(cbPeripheral: <#CBPeripheral#>, delegate: <#HelpViewControllerDelegate#>)
-//        uartViewController.navigationItem.rightBarButtonItem = infoBarButton
-//        pushViewController(uartViewController)
-        
     }
     
     
@@ -151,30 +140,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/
     }
     
     
-    //MARK: UI etc
-    
-//    func helpViewControllerDidFinish(controller: HelpViewController) {
-//        
-//        //Called when help view's done button is tapped
-//        
-//        if (IS_IPHONE) {
-////            dismissViewControllerAnimated(true, completion: nil)
-//        }
-//            
-//        else {
-////            helpPopoverController?.dismissPopoverAnimated(true)
-//        }
-//        
-//    }
-    
-    
     func createDeviceListViewController(){
-        
-        //add info bar button to mode controllers
-//        let archivedData = NSKeyedArchiver.archivedDataWithRootObject(infoButton)
-//        let buttonCopy = NSKeyedUnarchiver.unarchiveObjectWithData(archivedData) as! UIButton
-//        buttonCopy.addTarget(self, action: Selector("showInfo:"), forControlEvents: UIControlEvents.TouchUpInside)
-//        infoBarButton = UIBarButtonItem(customView: buttonCopy)
         deviceListViewController = DeviceListViewController(aDelegate: self)
         deviceListViewController.navigationItem.rightBarButtonItem = infoBarButton
         deviceListViewController.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Disconnect", style: UIBarButtonItemStyle.Plain, target: nil, action: nil)
@@ -265,52 +231,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate,/
         connectionStatus = ConnectionStatus.Scanning
         scanButtonItem?.title = "Scanning"
     }
-    
-    
-//    func currentHelpViewController()->HelpViewController {
-//        
-//        //Determine which help view to show based on the current view shown
-//        
-//        var hvc:HelpViewController
-//        
-//        if navController.topViewController.isKindOfClass(ControllerViewController){
-//            hvc = controllerViewController.helpViewController
-//        }
-//            
-//        else{
-//            hvc = helpViewController
-//        }
-//        
-//        return hvc
-//        
-//    }
-    
-    
-//    @IBAction func showInfo(sender:AnyObject) {
-//        
-//        // Show help info view on iPhone via flip transition, called via "i" button in navbar
-//        
-//        if (IS_IPHONE) {
-//            presentViewController(currentHelpViewController(), animated: true, completion: nil)
-//        }
-//            
-//            //iPad
-//        else if (IS_IPAD) {
-//            helpPopoverController?.dismissPopoverAnimated(true)
-//            
-//                helpPopoverController = UIPopoverController(contentViewController: currentHelpViewController())
-//                helpPopoverController?.backgroundColor = UIColor.darkGrayColor()
-//                
-//                let rightBBI:UIBarButtonItem! = navController.navigationBar.items.last!.rightBarButtonItem
-//                let aFrame:CGRect = rightBBI!.customView!.frame
-//                helpPopoverController?.presentPopoverFromRect(aFrame,
-//                    inView: rightBBI.customView!.superview!,
-//                    permittedArrowDirections: UIPopoverArrowDirection.Any,
-//                    animated: true)
-////            }
-//        }
-//    }
-    
+        
     
     func connectPeripheral(peripheral:CBPeripheral, mode:ConnectionMode) {
         

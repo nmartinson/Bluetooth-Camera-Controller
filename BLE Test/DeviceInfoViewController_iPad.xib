@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DeviceInfoViewController" customModule="BluetoothLE_Test" customModuleProvider="target">
             <connections>
                 <outlet property="headerView" destination="eEO-JL-u14" id="hq9-tZ-pSn"/>
-                <outlet property="helpViewController" destination="hjv-Z4-EYv" id="uHM-K5-ujL"/>
                 <outlet property="peripheralNameLabel" destination="R8j-DU-V2p" id="vsK-7u-gib"/>
                 <outlet property="tableView" destination="QgY-fI-3zg" id="MAd-75-RQs"/>
                 <outlet property="view" destination="A2u-ag-L11" id="8q9-fP-btB"/>
@@ -145,12 +144,6 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <point key="canvasLocation" x="-271.5" y="-438"/>
         </tableViewCell>
-        <customObject id="hjv-Z4-EYv" customClass="HelpViewController" customModule="BluetoothLE_Test" customModuleProvider="target">
-            <connections>
-                <outlet property="textView" destination="Cy9-k1-6Hv" id="hpc-Px-JUh"/>
-                <outlet property="view" destination="QyC-0A-FlQ" id="RG1-8l-yJ0"/>
-            </connections>
-        </customObject>
         <tableViewCell opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" rowHeight="22" id="XIR-ba-Wpq" userLabel="Attribute Cell" customClass="AttributeCell" customModule="BluetoothLE_Test" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="299" height="22"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -185,50 +178,6 @@
             <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <point key="canvasLocation" x="-271.5" y="-329.5"/>
         </tableViewCell>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="QyC-0A-FlQ" userLabel="View - Help">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="331"/>
-            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" indicatorStyle="white" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cy9-k1-6Hv">
-                    <rect key="frame" x="20" y="20" width="280" height="291"/>
-                    <attributedString key="attributedText">
-                        <fragment content="Info List Help">
-                            <attributes>
-                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue-Bold"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                        <fragment>
-                            <string key="content">
-
-• Each section of the table represents one of the peripheral's services followed by its relevant characteristics.
-
-• If a service or characteristic uses a predefined UUID, a standardized name is displayed.  Otherwise the UUID value is shown.
-
-• If a characteristic contains a readable value, that value is displayed at the bottom of the characteristic's table row</string>
-                            <attributes>
-                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <font key="NSFont" size="15" name="HelveticaNeue"/>
-                                <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
-                            </attributes>
-                        </fragment>
-                    </attributedString>
-                    <textInputTraits key="textInputTraits"/>
-                    <dataDetectorType key="dataDetectorTypes" link="YES"/>
-                </textView>
-            </subviews>
-            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-            <constraints>
-                <constraint firstItem="Cy9-k1-6Hv" firstAttribute="leading" secondItem="QyC-0A-FlQ" secondAttribute="leading" constant="20" id="0od-cq-Ryb"/>
-                <constraint firstItem="Cy9-k1-6Hv" firstAttribute="top" secondItem="QyC-0A-FlQ" secondAttribute="top" constant="20" id="Pg2-rG-uwJ"/>
-                <constraint firstAttribute="trailing" secondItem="Cy9-k1-6Hv" secondAttribute="trailing" constant="20" id="fAc-MI-y1B"/>
-                <constraint firstAttribute="bottom" secondItem="Cy9-k1-6Hv" secondAttribute="bottom" constant="20" id="kIs-tM-7my"/>
-            </constraints>
-            <nil key="simulatedStatusBarMetrics"/>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="140" y="-214.5"/>
-        </view>
     </objects>
     <resources>
         <image name="signalStrength-0.png" width="24" height="21"/>

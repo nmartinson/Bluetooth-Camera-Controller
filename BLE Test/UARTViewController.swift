@@ -11,7 +11,7 @@ import UIKit
 import Dispatch
 
 
-protocol UARTViewControllerDelegate{//: HelpViewControllerDelegate {
+protocol UARTViewControllerDelegate{
     
     func sendData(newData:NSData)
     
@@ -32,7 +32,6 @@ class UARTViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     }
     
     var delegate:UARTViewControllerDelegate?
-//    @IBOutlet var helpViewController:HelpViewController!
     @IBOutlet weak var consoleView:UITextView!
     @IBOutlet weak var msgInputView:UIView!
     @IBOutlet var msgInputYContraint:NSLayoutConstraint?    //iPad
@@ -82,11 +81,6 @@ class UARTViewController: UIViewController, UITextFieldDelegate, UITextViewDeleg
     
     
     override func viewDidLoad(){
-        
-        //setup help view
-//        self.helpViewController.title = "UART Help"
-//        self.helpViewController.delegate = delegate
-        
         //round corners on console
         self.consoleView.clipsToBounds = true
         self.consoleView.layer.cornerRadius = 4.0
