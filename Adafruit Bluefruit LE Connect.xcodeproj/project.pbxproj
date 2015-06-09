@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2B522A5A1B2756B500A86676 /* BasicTriggerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A591B2756B500A86676 /* BasicTriggerController.xib */; };
 		2B522A5C1B27577800A86676 /* BasicTriggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A5B1B27577800A86676 /* BasicTriggerController.swift */; };
+		2B522A6A1B27984100A86676 /* TimeLapseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A691B27984100A86676 /* TimeLapseController.swift */; };
+		2B522A6D1B27988C00A86676 /* TimeLapseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A6C1B27988C00A86676 /* TimeLapseController.xib */; };
 		F007EDC31A3191BC0023FCD6 /* ble-arrow_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */; };
 		F007EDC41A3191BC0023FCD6 /* ble-arrow_button_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */; };
 		F007EDC51A3191BC0023FCD6 /* ble-arrow_button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBD1A3191BC0023FCD6 /* ble-arrow_button_left.png */; };
@@ -91,6 +93,8 @@
 /* Begin PBXFileReference section */
 		2B522A591B2756B500A86676 /* BasicTriggerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BasicTriggerController.xib; sourceTree = "<group>"; };
 		2B522A5B1B27577800A86676 /* BasicTriggerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriggerController.swift; sourceTree = "<group>"; };
+		2B522A691B27984100A86676 /* TimeLapseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLapseController.swift; sourceTree = "<group>"; };
+		2B522A6C1B27988C00A86676 /* TimeLapseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLapseController.xib; sourceTree = "<group>"; };
 		F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down.png"; sourceTree = "<group>"; };
 		F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down@2x.png"; sourceTree = "<group>"; };
 		F007EDBD1A3191BC0023FCD6 /* ble-arrow_button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_left.png"; sourceTree = "<group>"; };
@@ -190,11 +194,29 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2B522A681B27967B00A86676 /* Camera Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2B522A5B1B27577800A86676 /* BasicTriggerController.swift */,
+				2B522A691B27984100A86676 /* TimeLapseController.swift */,
+			);
+			name = "Camera Controllers";
+			sourceTree = "<group>";
+		};
+		2B522A6B1B27986F00A86676 /* Camera Controller Views */ = {
+			isa = PBXGroup;
+			children = (
+				2B522A591B2756B500A86676 /* BasicTriggerController.xib */,
+				2B522A6C1B27988C00A86676 /* TimeLapseController.xib */,
+			);
+			name = "Camera Controller Views";
+			sourceTree = "<group>";
+		};
 		F08BFF4718A4F7E600EF43FB /* UI */ = {
 			isa = PBXGroup;
 			children = (
 				F02F6EEA1A247F160080FFDF /* ControllerViewController_iPhone.xib */,
-				2B522A591B2756B500A86676 /* BasicTriggerController.xib */,
+				2B522A6B1B27986F00A86676 /* Camera Controller Views */,
 				F07D973F19FA46F200CA88CF /* DeviceInfoViewController_iPhone.xib */,
 				F0A2C98716BBE44500F2FD12 /* BLEMainViewController_iPhone.xib */,
 				F02F2BB419EE83AC0057F374 /* DeviceListViewController_iPhone.xib */,
@@ -246,7 +268,7 @@
 				F0DBB56819F4625800CB91E1 /* DeviceCell.swift */,
 				F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */,
 				F0718DFF19EE77F4002B5ABB /* DeviceListViewController.swift */,
-				2B522A5B1B27577800A86676 /* BasicTriggerController.swift */,
+				2B522A681B27967B00A86676 /* Camera Controllers */,
 				F0A2C97016BBE44500F2FD12 /* Supporting Files */,
 				F08BFF4718A4F7E600EF43FB /* UI */,
 			);
@@ -443,6 +465,7 @@
 				F007EDDA1A3195110023FCD6 /* ble-button_numbers-4@2x.png in Resources */,
 				F007EDE41A3196090023FCD6 /* ble-button_numbers-rotated-4.png in Resources */,
 				F007EDC51A3191BC0023FCD6 /* ble-arrow_button_left.png in Resources */,
+				2B522A6D1B27988C00A86676 /* TimeLapseController.xib in Resources */,
 				F007EDF21A31A2350023FCD6 /* ble-button_pad_exit_rotated.png in Resources */,
 				F007EDD71A3195110023FCD6 /* ble-button_numbers-3.png in Resources */,
 				F09E52D216D7814600F1F37A /* cellGradient2-150h.png in Resources */,
@@ -466,6 +489,7 @@
 			files = (
 				2B522A5C1B27577800A86676 /* BasicTriggerController.swift in Sources */,
 				F0BCF06819EBDC59006086C6 /* BLEAppDelegate.swift in Sources */,
+				2B522A6A1B27984100A86676 /* TimeLapseController.swift in Sources */,
 				F0F889A91A009B81008AA257 /* BLEInfo.swift in Sources */,
 				F0F889AB1A00BD55008AA257 /* BLEPeripheral.swift in Sources */,
 				F0718E0019EE77F4002B5ABB /* DeviceListViewController.swift in Sources */,

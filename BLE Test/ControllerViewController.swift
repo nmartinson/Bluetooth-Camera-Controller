@@ -14,7 +14,7 @@ protocol ControllerViewControllerDelegate{
 
 class ControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
 {
-    var dataSource = ["Basic Trigger"]
+    var dataSource = ["Basic Trigger", "Time Lapse"]
     var delegate:UARTViewControllerDelegate?
     @IBOutlet var buttons:[UIButton]!
     @IBOutlet var exitButton:UIButton!
@@ -72,18 +72,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         return dataSource.count
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 44.0
-    }
-    
-    func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 44.0
-    }
-    
-    func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 0.5
-    }
-    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
@@ -99,30 +87,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
 
         tableView.deselectRowAtIndexPath(indexPath, animated: false)
         self.navigationController?.pushViewController(view, animated: true)
-    }
-    
-    func appendCRCmutable(data:NSMutableData) {
-        //append crc
-        var len = data.length
-        var bdata = [UInt8](count: len, repeatedValue: 0)
-        var buf = [UInt8](count: len, repeatedValue: 0)
-        var crc:UInt8 = 0
-        data.getBytes(&bdata, length: len)
-        
-        for i in bdata {    //add all bytes
-            crc = crc &+ i
-        }
-        
-        crc = ~crc  //invert
-        
-        data.appendBytes(&crc, length: 1)
-    }
-    
-    func appendCRC(data:NSData)->NSMutableData {
-        var mData = NSMutableData(length: 0)
-        mData!.appendData(data)
-        appendCRCmutable(mData!)
-        return mData!
     }
     
 }

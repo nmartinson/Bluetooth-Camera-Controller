@@ -28,6 +28,11 @@ let cellSelectionColor = UIColor(red: 100.0/255.0, green: 182.0/255.0, blue: 255
 let bleBlueColor = UIColor(red: 24.0/255.0, green: 126.0/255.0, blue: 248.0/255.0, alpha: 1.0)
 
 
+// CAMERA MODE CODES
+let BASIC_TRIGGER = "a"
+let TIMELAPSE = "b"
+
+
 func animateCellSelection(cell:UITableViewCell) {
     
     //fade cell background blue to white
@@ -205,4 +210,6 @@ func UUIDsAreEqual(firstID:CBUUID, secondID:CBUUID)->Bool {
     }
     
 }
+
+
 

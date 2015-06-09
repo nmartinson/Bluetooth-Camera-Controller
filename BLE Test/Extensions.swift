@@ -143,9 +143,7 @@ extension CBUUID {
         if caseSensitive == true {
             options = NSStringCompareOptions.LiteralSearch
         }
-        
-//        println("\(self.representativeString()) ?= \(aString)")
-        
+                
         verdict = aString.compare(self.representativeString() as String, options: options, range: nil, locale: NSLocale.currentLocale()) == NSComparisonResult.OrderedSame
         
         return verdict
@@ -179,6 +177,31 @@ func binaryforByte(value: UInt8) -> String {
     }
     
     return str
+}
+
+// Functions for sending data
+func appendCRCmutable(data:NSMutableData) {
+    //append crc
+    var len = data.length
+    var bdata = [UInt8](count: len, repeatedValue: 0)
+    var buf = [UInt8](count: len, repeatedValue: 0)
+    var crc:UInt8 = 0
+    data.getBytes(&bdata, length: len)
+    
+    for i in bdata {    //add all bytes
+        crc = crc &+ i
+    }
+    
+    crc = ~crc  //invert
+    
+    data.appendBytes(&crc, length: 1)
+}
+
+func appendCRC(data:NSData)->NSMutableData {
+    var mData = NSMutableData(length: 0)
+    mData!.appendData(data)
+    appendCRCmutable(mData!)
+    return mData!
 }
 
 
