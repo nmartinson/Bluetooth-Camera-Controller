@@ -26,24 +26,10 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     @IBOutlet var controlTable:UITableView!
     @IBOutlet var valueCell:SensorValueCell!
     
-    var accelButton:BLESensorButton!
+//    var accelButton:BLESensorButton!
     var buttonColor:UIColor!
     var exitButtonColor:UIColor!
-    
-    enum SensorType:Int {   //raw values used for reference
-        case Accel
-    }
-    
-    struct Sensor {
-        var type:SensorType
-        var data:NSData?
-        var prefix:String
-        var valueCells:[SensorValueCell]
-        var toggleButton:BLESensorButton
-        var enabled:Bool
-    }
 
-    private var sendTimer:NSTimer?
     private let buttonPrefix = "!B"
 //    private let sensorQueue = dispatch_queue_create("com.adafruit.bluefruitconnect.sensorQueue", DISPATCH_QUEUE_SERIAL)
     
@@ -57,9 +43,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     
         //button stuff
         buttonColor = buttons[0].backgroundColor
-        for b in buttons {
-            b.layer.cornerRadius = 4.0
-        }
         exitButtonColor = exitButton.backgroundColor
         exitButton.layer.cornerRadius = 4.0
 
@@ -108,21 +91,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         
         self.delegate = aDelegate
         self.title = "Controller"
-    }
-    
-    
-    func newValueCell(prefixString:String!)->SensorValueCell {
-        
-        let cellData = NSKeyedArchiver.archivedDataWithRootObject(self.valueCell)
-        let cell:SensorValueCell = NSKeyedUnarchiver.unarchiveObjectWithData(cellData) as! SensorValueCell
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        cell.valueLabel = cell.viewWithTag(100) as! UILabel
-//        let cell = SensorValueCell()
-        
-        cell.prefixString = prefixString
-        
-        return cell
-        
     }
     
     
@@ -222,9 +190,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     //MARK: Control Pad
     
     @IBAction func controlPadButtonPressed(sender:UIButton) {
-    
-//        println("PRESSED \(sender.tag)")
-        
         sender.backgroundColor = cellSelectionColor
         
         var str = NSString(string: buttonPrefix + "\(sender.tag)" + "1")
@@ -297,13 +262,3 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     
     
 }
-
-
-
-
-
-
-
-
-
-
