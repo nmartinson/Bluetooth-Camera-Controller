@@ -52,7 +52,6 @@
 		F08ACA6C16DD0C0400A377D1 /* cellGradient3-150h.png in Resources */ = {isa = PBXBuildFile; fileRef = F08ACA6A16DD0C0400A377D1 /* cellGradient3-150h.png */; };
 		F09E52D016D77CA800F1F37A /* cellGradient150h.png in Resources */ = {isa = PBXBuildFile; fileRef = F09E52CF16D77CA800F1F37A /* cellGradient150h.png */; };
 		F09E52D216D7814600F1F37A /* cellGradient2-150h.png in Resources */ = {isa = PBXBuildFile; fileRef = F09E52D116D7814600F1F37A /* cellGradient2-150h.png */; };
-		F0A1D4671A80B6A3009C3001 /* BLESensorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0A1D4661A80B6A3009C3001 /* BLESensorButton.swift */; };
 		F0A2C96A16BBE44500F2FD12 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A2C96916BBE44500F2FD12 /* UIKit.framework */; };
 		F0A2C96C16BBE44500F2FD12 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A2C96B16BBE44500F2FD12 /* Foundation.framework */; };
 		F0A2C96E16BBE44500F2FD12 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F0A2C96D16BBE44500F2FD12 /* CoreGraphics.framework */; };
@@ -143,7 +142,6 @@
 		F08ACA6A16DD0C0400A377D1 /* cellGradient3-150h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellGradient3-150h.png"; sourceTree = "<group>"; };
 		F09E52CF16D77CA800F1F37A /* cellGradient150h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cellGradient150h.png; sourceTree = "<group>"; };
 		F09E52D116D7814600F1F37A /* cellGradient2-150h.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cellGradient2-150h.png"; sourceTree = "<group>"; };
-		F0A1D4661A80B6A3009C3001 /* BLESensorButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLESensorButton.swift; sourceTree = "<group>"; };
 		F0A2C96616BBE44500F2FD12 /* BluetoothLE Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "BluetoothLE Test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F0A2C96916BBE44500F2FD12 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F0A2C96B16BBE44500F2FD12 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -268,7 +266,6 @@
 				F0BCF06519EBB881006086C6 /* BLEMainViewController.swift */,
 				F0F889AA1A00BD55008AA257 /* BLEPeripheral.swift */,
 				F02F6EE91A247F160080FFDF /* ControllerViewController.swift */,
-				F0A1D4661A80B6A3009C3001 /* BLESensorButton.swift */,
 				F0DBB56819F4625800CB91E1 /* DeviceCell.swift */,
 				F07D973E19FA46F200CA88CF /* DeviceInfoViewController.swift */,
 				F0718DFF19EE77F4002B5ABB /* DeviceListViewController.swift */,
@@ -521,7 +518,6 @@
 				F02F6EEB1A247F160080FFDF /* ControllerViewController.swift in Sources */,
 				F0A94FDC19DBE68800C8A37E /* Constants.swift in Sources */,
 				F0B7D14319F1081C00DFDDBE /* BLEDevice.swift in Sources */,
-				F0A1D4671A80B6A3009C3001 /* BLESensorButton.swift in Sources */,
 				F0DBB56A19F4625800CB91E1 /* DeviceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
