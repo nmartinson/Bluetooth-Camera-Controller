@@ -27,14 +27,8 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
         //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
         
         var nibName:NSString
-        
-        if IS_IPHONE{
-            nibName = "DeviceInfoViewController_iPhone"
-        }
-        else{   //IPAD
-            nibName = "DeviceInfoViewController_iPad"
-        }
-        
+        nibName = "DeviceInfoViewController_iPhone"
+
         self.init(nibName: nibName as String, bundle: NSBundle.mainBundle())
         
         self.peripheral = cbPeripheral

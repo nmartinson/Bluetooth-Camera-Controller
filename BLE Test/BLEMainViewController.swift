@@ -18,11 +18,16 @@ enum ConnectionMode:Int {
     case Controller
 }
 
+protocol UARTViewControllerDelegate{
+    
+    func sendData(newData:NSData)
+    
+}
+
 class BLEMainViewController : UIViewController, UINavigationControllerDelegate, CBCentralManagerDelegate,
                               BLEPeripheralDelegate, UARTViewControllerDelegate, UIAlertViewDelegate,
                               DeviceListViewControllerDelegate {
 
-    
     enum ConnectionStatus:Int {
         case Idle = 0
         case Scanning
@@ -33,11 +38,9 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     var connectionMode:ConnectionMode = ConnectionMode.DeviceList
     var connectionStatus:ConnectionStatus = ConnectionStatus.Idle
     var navController:UINavigationController!
-    var uartViewController:UARTViewController!
     var deviceListViewController:DeviceListViewController!
     var deviceInfoViewController:DeviceInfoViewController!
     var controllerViewController:ControllerViewController!
-    @IBOutlet var infoButton:UIButton!
     @IBOutlet var warningLabel:UILabel!
     
     private var cm:CBCentralManager?
@@ -53,28 +56,15 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     
     //MARK: View Lifecycle
-    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
-        
         var newNibName:String
-        
-        if (IS_IPHONE){
-            newNibName = "BLEMainViewController_iPhone"
-        }
-        else{
-            newNibName = "BLEMainViewController_iPad"
-        }
-        
+        newNibName = "BLEMainViewController_iPhone"
         super.init(nibName: newNibName, bundle: NSBundle.mainBundle())
     }
     
-    
     required init(coder aDecoder: NSCoder) {
-        
         super.init(coder: aDecoder)
-        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,34 +99,20 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if (IS_IPAD) {
-            addChildViewController(navController)
-            view.addSubview(navController.view)
-        }
-        
     }
     
-    
     func didBecomeActive() {
-        
         // Application returned from background state
-        
         // Adjust warning label
         if cm?.state == CBCentralManagerState.PoweredOff {
-            
             warningLabel.text = "Bluetooth disabled"
-            
         }
         else if deviceListViewController.devices.count == 0 {
-            
             warningLabel.text = "No peripherals found"
-            
         }
         else {
             warningLabel.text = ""
         }
-        
     }
     
     
@@ -190,14 +166,7 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
             connectionStatus = ConnectionStatus.Idle
             scanButtonItem?.title = "Scan for peripherals"
         }
-        
-            
-//        else if (connectionMode == ConnectionMode.UART) {
-//            
-//        }
-        
     }
-    
     
     func startScan() {
         //Check if Bluetooth is enabled
@@ -355,7 +324,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         currentAlertView = nil
         
         //alert dismisses automatically @ return
-        
     }
     
     
@@ -385,26 +353,9 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
                     disconnect()
                 }
             }
-            
-            // Returning from UART
-            else if connectionMode == ConnectionMode.UART {
-                uartViewController?.inputTextView.resignFirstResponder()
                 
-                if connectionStatus == ConnectionStatus.Connected {
-                    disconnect()
-                }
-            }
-            
-            // Returning from Pin I/O
-            else if connectionMode == ConnectionMode.PinIO {
-                if connectionStatus == ConnectionStatus.Connected {
-                    disconnect()
-                }
-            }
-            
             // Returning from Controller
             else if connectionMode == ConnectionMode.Controller {
-//                controllerViewController?.stopSensorUpdates()
                 if connectionStatus == ConnectionStatus.Connected {
                     disconnect()
                 }
@@ -557,33 +508,19 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     
     func dereferenceModeController() {
-        
-//        uartViewController = nil
         deviceInfoViewController = nil
-        
     }
     
     
     func isModuleController(anObject:AnyObject)->Bool{
-        
         var verdict = false
-//        if     anObject.isMemberOfClass(PinIOViewController)
-//            || anObject.isMemberOfClass(UARTViewController)
-//            || anObject.isMemberOfClass(DeviceInfoViewController)
         if anObject.isMemberOfClass(ControllerViewController)
             || (anObject.title == "Control Pad")
             || (anObject.title == "Color Picker") {
                 verdict = true
         }
         
-        //all controllers are modules except BLEMainViewController - weak
-//        var verdict = true
-//        if anObject.isMemberOfClass(BLEMainViewController) {
-//            verdict = false
-//        }
-        
         return verdict
-        
     }
     
     
@@ -642,28 +579,8 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
     
     
     func didReceiveData(newData: NSData) {
-        
         //Data incoming from UART peripheral, forward to current view controller
-        
         printLog(self, "didReceiveData", "\(newData.stringRepresentation())")
-        
-//        if (connectionStatus == ConnectionStatus.Connected ) {
-//            //UART
-//            if (connectionMode == ConnectionMode.UART) {
-//                //send data to UART Controller
-//                uartViewController.receiveData(newData)
-//            }
-//                
-//                //Pin I/O
-//            else if (connectionMode == ConnectionMode.PinIO) {
-//                //send data to PIN IO Controller
-//                pinIoViewController.receiveData(newData)
-//            }
-//        }
-//        else {
-//            printLog(self, "didReceiveData", "Received data without connection")
-//        }
-    
     }
     
     
@@ -748,7 +665,6 @@ class BLEMainViewController : UIViewController, UINavigationControllerDelegate, 
         }
         
         currentPeripheral!.writeRawData(newData)
-        
     }
     
     

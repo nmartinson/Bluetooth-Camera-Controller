@@ -32,14 +32,7 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
     
     convenience init(aDelegate:DeviceListViewControllerDelegate){
         var nibName:NSString
-        
-        if IS_IPHONE{
-            nibName = "DeviceListViewController_iPhone"
-        }
-        else{   //IPAD
-            nibName = "DeviceListViewController_iPad"
-        }
-        
+        nibName = "DeviceListViewController_iPhone"
         self.init(nibName: nibName as String, bundle: NSBundle.mainBundle())
         
         self.delegate = aDelegate
@@ -50,7 +43,6 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
             UIImage(named: "signalStrength-2.png")!,
             UIImage(named: "signalStrength-3.png")!,
             UIImage(named: "signalStrength-4.png")!)
-        
     }
     
     
@@ -342,7 +334,6 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
     
     
     //MARK: Helper functions
-    
     func indexPathForSubview(theView:UIView) ->NSIndexPath{
         
         //Find the indexpath for the cell which contains theView
@@ -367,9 +358,7 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
         }
         
         return indexPath!
-        
     }
-    
     
     func selectAttributeCell(sender: UIButton){
         
@@ -391,28 +380,15 @@ class DeviceListViewController : UIViewController, UITableViewDelegate, UITableV
                 msg += s
             }
         }
-        
-//        var style = UIAlertControllerStyle.ActionSheet
-//        if IS_IPAD {
-            var style = UIAlertControllerStyle.Alert
-//        }
+
+        var style = UIAlertControllerStyle.Alert
         let alertController = UIAlertController(title: ttl, message: msg, preferredStyle: style)
-        
         
         // Cancel button
         let aaCancel = UIAlertAction(title: "OK", style: UIAlertActionStyle.Cancel) { (aa:UIAlertAction!) -> Void in }
         alertController.addAction(aaCancel)
         
-        // Info button
-//        let aaInfo = UIAlertAction(title: "Info", style: UIAlertActionStyle.Default) { (aa:UIAlertAction!) -> Void in
-//            self.connectInMode(ConnectionMode.Info, peripheral: device.peripheral)
-//    }
-        
-        self.presentViewController(alertController, animated: true) { () -> Void in
-            
-        }
-    
+        self.presentViewController(alertController, animated: true) { () -> Void in}
     }
-    
     
 }

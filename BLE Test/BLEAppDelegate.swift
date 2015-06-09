@@ -25,12 +25,8 @@ class BLEAppDelegate: UIResponder, UIApplicationDelegate {
         
         // Load NIB based on current platform
         var nibName:String
-        if IS_IPHONE {
-            nibName = "BLEMainViewController_iPhone"
-        }
-        else{
-            nibName = "BLEMainViewController_iPad"
-        }
+        nibName = "BLEMainViewController_iPhone"
+
         self.mainViewController = BLEMainViewController(nibName: nibName, bundle: NSBundle.mainBundle())    //TODO: check for redundancy
         
         window!.rootViewController = mainViewController

@@ -48,14 +48,7 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     convenience init(aDelegate:UARTViewControllerDelegate){
         //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
         var nibName:NSString
-        
-        if IS_IPHONE {
-            nibName = "ControllerViewController_iPhone"
-        }
-        else{   //IPAD
-            nibName = "ControllerViewController_iPad"
-        }
-        
+        nibName = "ControllerViewController_iPhone"
         self.init(nibName: nibName as String, bundle: NSBundle.mainBundle())
         
         self.delegate = aDelegate
