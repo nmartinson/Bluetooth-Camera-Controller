@@ -4,13 +4,9 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BasicTriggerController" customModule="BluetoothLE_Test" customModuleProvider="target">
-            <connections>
-                <outlet property="view" destination="crZ-sj-PwW" id="O8f-nY-B6X"/>
-            </connections>
-        </placeholder>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController id="NaO-P5-Bdk">
+        <viewController id="NaO-P5-Bdk" customClass="BasicTriggerController" customModule="BluetoothLE_Test" customModuleProvider="target">
             <layoutGuides>
                 <viewControllerLayoutGuide type="top" id="IqK-AH-ffA"/>
                 <viewControllerLayoutGuide type="bottom" id="JtG-dg-OMz"/>
@@ -26,6 +22,11 @@
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
+                        <connections>
+                            <action selector="shutterButtonPressed:" destination="NaO-P5-Bdk" eventType="touchDown" id="M7d-5y-gyE"/>
+                            <action selector="shutterButtonReleased:" destination="NaO-P5-Bdk" eventType="touchUpInside" id="Tkl-oT-24V"/>
+                            <action selector="shutterButtonReleased:" destination="NaO-P5-Bdk" eventType="touchDragExit" id="nOb-u8-819"/>
+                        </connections>
                     </button>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

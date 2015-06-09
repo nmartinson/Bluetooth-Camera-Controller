@@ -9,43 +9,21 @@
 import UIKit
 
 protocol ControllerViewControllerDelegate: HelpViewControllerDelegate {
-    
     func sendData(newData:NSData)
-    
 }
 
-class ControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    
-    var dataSource = ["Control Pad", "Simple Trigger"]
+class ControllerViewController: UIViewController, UITableViewDataSource, UITableViewDelegate
+{
+    var dataSource = ["Basic Trigger"]
     var delegate:UARTViewControllerDelegate?
-    @IBOutlet var helpViewController:HelpViewController!
-    @IBOutlet var controlPadViewController:UIViewController!
     @IBOutlet var buttons:[UIButton]!
     @IBOutlet var exitButton:UIButton!
     @IBOutlet var controlTable:UITableView!
-//    @IBOutlet var valueCell:SensorValueCell!
-    
-//    var accelButton:BLESensorButton!
-    var buttonColor:UIColor!
-    var exitButtonColor:UIColor!
 
     private let buttonPrefix = "!B"    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        //setup help view
-        self.helpViewController.title = "Controller Help"
-        self.helpViewController.delegate = delegate
-    
-        //button stuff
-        buttonColor = buttons[0].backgroundColor
-        exitButtonColor = exitButton.backgroundColor
-        exitButton.layer.cornerRadius = 4.0
-
-        //Register to be notified when app returns to active
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("checkLocationServices"), name: UIApplicationDidBecomeActiveNotification, object: nil)
-        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -53,7 +31,6 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     }
     
     override func viewWillDisappear(animated: Bool) {
-        
         // Stop updates if we're returning to main view
         if self.isMovingFromParentViewController() {
             //Stop receiving app active notification
@@ -61,20 +38,15 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         }
         
         super.viewWillDisappear(animated)
-        
     }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     convenience init(aDelegate:UARTViewControllerDelegate){
-        
         //Separate NIBs for iPhone 3.5", iPhone 4", & iPad
-        
         var nibName:NSString
         
         if IS_IPHONE {
@@ -92,135 +64,51 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
     
     
     //MARK: TableView
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+    {
         let cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: nil)
         var buttonView:UIButton?
         
-//        if indexPath.row == 0{
-            cell.textLabel!.text = dataSource[indexPath.row]
-            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-            return cell
-//        }
-//        else {
-//            cell.textLabel?.text = "Control Pad"
-//            cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-//            cell.selectionStyle = UITableViewCellSelectionStyle.Blue
-//            return cell
-//        }
+        cell.textLabel!.text = dataSource[indexPath.row]
+        cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
+        cell.selectionStyle = UITableViewCellSelectionStyle.Blue
+        return cell
     }
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataSource.count
     }
     
-    
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        
-//        if indexPath.row == 0 {
-            return 44.0
-//        }
-//        else {
-//            return 28.0
-//        }
-        
+        return 44.0
     }
-    
     
     func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }
     
-    
     func tableView(tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        
         return 0.5
-        
     }
-    
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
     
-    
     func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        if section == 0 {
-            return "Camera Controller"
-        }
-        
-        else {
-            return nil
-        }
+        return "Camera Controller"
     }
     
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let nib = dataSource[indexPath.row].stringByReplacingOccurrencesOfString(" ", withString: "").stringByAppendingString("Controller")
-        println(nib)
-//        let view = NSBundle.mainBundle().loadNibNamed(nib, owner: self, options: nil).first as! UIViewController
-        var view = UIViewController(nibName: nib, bundle: nil) as UIViewController
+        let view = NSBundle.mainBundle().loadNibNamed(nib, owner: self, options: nil).first as! UIViewController
 
-        
-//        if indexPath.section == 0 {
-            tableView.deselectRowAtIndexPath(indexPath, animated: false)
-            self.navigationController?.pushViewController(view, animated: true)
-//            self.navigationController?.pushViewController(controlPadViewController, animated: true)
-            
-            if IS_IPHONE {  //Hide nav bar on iphone to conserve space
-                self.navigationController?.setNavigationBarHidden(true, animated: true)
-            }
-//        }
-        
+        tableView.deselectRowAtIndexPath(indexPath, animated: false)
+        self.navigationController?.pushViewController(view, animated: true)
     }
-    
-    
-    //MARK: Control Pad
-    
-    @IBAction func controlPadButtonPressed(sender:UIButton) {
-        sender.backgroundColor = cellSelectionColor
-        
-        var str = NSString(string: buttonPrefix + "\(sender.tag)" + "1")
-        let data = NSData(bytes: str.UTF8String, length: str.length)
-        
-        delegate?.sendData(appendCRC(data))
-    
-    }
-    
-    
-    @IBAction func controlPadButtonReleased(sender:UIButton) {
-        
-        sender.backgroundColor = buttonColor
-        
-        var str = NSString(string: buttonPrefix + "\(sender.tag)" + "0")
-        let data = NSData(bytes: str.UTF8String, length: str.length)
-        
-        delegate?.sendData(appendCRC(data))
-    }
-    
-    @IBAction func controlPadExitPressed(sender:UIButton) {
-        
-        sender.backgroundColor = buttonColor
-    }
-    
-    @IBAction func controlPadExitReleased(sender:UIButton) {
-        
-        sender.backgroundColor = exitButtonColor
-        navigationController?.popViewControllerAnimated(true)
-        self.navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
-    @IBAction func controlPadExitDragOutside(sender:UIButton) {
-        sender.backgroundColor = exitButtonColor
-    }
-    
     
     func appendCRCmutable(data:NSMutableData) {
-        
         //append crc
         var len = data.length
         var bdata = [UInt8](count: len, repeatedValue: 0)
@@ -243,14 +131,5 @@ class ControllerViewController: UIViewController, UITableViewDataSource, UITable
         appendCRCmutable(mData!)
         return mData!
     }
-    
-    
-    
-    func helpViewControllerDidFinish(controller : HelpViewController) {
-        
-        delegate?.helpViewControllerDidFinish(controller)
-        
-    }
-    
     
 }

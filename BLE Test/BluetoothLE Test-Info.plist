@@ -35,6 +35,8 @@
 		<string>bluetooth-peripheral</string>
 		<string>bluetooth-central</string>
 	</array>
+	<key>UIMainStoryboardFile</key>
+	<string>Storyboard</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIRequiredDeviceCapabilities</key>

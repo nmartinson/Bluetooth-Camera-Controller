@@ -10,17 +10,17 @@ import Foundation
 import UIKit
 
 
-@objc protocol HelpViewControllerDelegate : Any{
-    
-    func helpViewControllerDidFinish(controller : HelpViewController)
-    
-}
+//@objc protocol HelpViewControllerDelegate : Any{
+//    
+//    func helpViewControllerDidFinish(controller : HelpViewController)
+//    
+//}
 
 
 class HelpViewController : UIViewController {
     
     
-    @IBOutlet var delegate : HelpViewControllerDelegate?
+//    @IBOutlet var delegate : HelpViewControllerDelegate?
     @IBOutlet var versionLabel : UILabel?
     @IBOutlet var textView : UITextView?
     
@@ -76,11 +76,11 @@ class HelpViewController : UIViewController {
     }
     
     
-    @IBAction func done(sender : AnyObject) {
-        
-        delegate?.helpViewControllerDidFinish(self)
-        
-    }
+//    @IBAction func done(sender : AnyObject) {
+//        
+////        delegate?.helpViewControllerDidFinish(self)
+//        
+//    }
     
     
 }

@@ -11,7 +11,7 @@
 import UIKit
 import CoreBluetooth
 
-class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, HelpViewControllerDelegate{
+class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{//, HelpViewControllerDelegate{
     
     @IBOutlet var tableView:UITableView!
     @IBOutlet var headerView:UIView!
@@ -241,9 +241,9 @@ class DeviceInfoViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     
-    func helpViewControllerDidFinish(controller : HelpViewController){
-        
-    }
+//    func helpViewControllerDidFinish(controller : HelpViewController){
+//        
+//    }
 
     
     func displayNameforUUID(uuid:CBUUID)->String {
