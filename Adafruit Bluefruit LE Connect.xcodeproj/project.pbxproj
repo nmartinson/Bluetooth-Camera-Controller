@@ -11,6 +11,8 @@
 		2B522A5C1B27577800A86676 /* BasicTriggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A5B1B27577800A86676 /* BasicTriggerController.swift */; };
 		2B522A6A1B27984100A86676 /* TimeLapseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B522A691B27984100A86676 /* TimeLapseController.swift */; };
 		2B522A6D1B27988C00A86676 /* TimeLapseController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B522A6C1B27988C00A86676 /* TimeLapseController.xib */; };
+		2BE569381B2CAC8B00A999A7 /* TimerTriggerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BE569371B2CAC8B00A999A7 /* TimerTriggerController.swift */; };
+		2BE5693A1B2CACF800A999A7 /* TimerTriggerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BE569391B2CACF800A999A7 /* TimerTriggerController.xib */; };
 		F007EDC31A3191BC0023FCD6 /* ble-arrow_button_down.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */; };
 		F007EDC41A3191BC0023FCD6 /* ble-arrow_button_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */; };
 		F007EDC51A3191BC0023FCD6 /* ble-arrow_button_left.png in Resources */ = {isa = PBXBuildFile; fileRef = F007EDBD1A3191BC0023FCD6 /* ble-arrow_button_left.png */; };
@@ -95,6 +97,8 @@
 		2B522A5B1B27577800A86676 /* BasicTriggerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicTriggerController.swift; sourceTree = "<group>"; };
 		2B522A691B27984100A86676 /* TimeLapseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeLapseController.swift; sourceTree = "<group>"; };
 		2B522A6C1B27988C00A86676 /* TimeLapseController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimeLapseController.xib; sourceTree = "<group>"; };
+		2BE569371B2CAC8B00A999A7 /* TimerTriggerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerTriggerController.swift; sourceTree = "<group>"; };
+		2BE569391B2CACF800A999A7 /* TimerTriggerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TimerTriggerController.xib; sourceTree = "<group>"; };
 		F007EDBB1A3191BC0023FCD6 /* ble-arrow_button_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down.png"; sourceTree = "<group>"; };
 		F007EDBC1A3191BC0023FCD6 /* ble-arrow_button_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_down@2x.png"; sourceTree = "<group>"; };
 		F007EDBD1A3191BC0023FCD6 /* ble-arrow_button_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ble-arrow_button_left.png"; sourceTree = "<group>"; };
@@ -199,6 +203,7 @@
 			children = (
 				2B522A5B1B27577800A86676 /* BasicTriggerController.swift */,
 				2B522A691B27984100A86676 /* TimeLapseController.swift */,
+				2BE569371B2CAC8B00A999A7 /* TimerTriggerController.swift */,
 			);
 			name = "Camera Controllers";
 			sourceTree = "<group>";
@@ -208,6 +213,7 @@
 			children = (
 				2B522A591B2756B500A86676 /* BasicTriggerController.xib */,
 				2B522A6C1B27988C00A86676 /* TimeLapseController.xib */,
+				2BE569391B2CACF800A999A7 /* TimerTriggerController.xib */,
 			);
 			name = "Camera Controller Views";
 			sourceTree = "<group>";
@@ -457,6 +463,7 @@
 				F007EDD81A3195110023FCD6 /* ble-button_numbers-3@2x.png in Resources */,
 				F007EDF01A31A2350023FCD6 /* ble-button_pad_exit.png in Resources */,
 				F0C47C1D16C23CB3002EFADA /* CPModuleButtonStretchableDisabled@2x.png in Resources */,
+				2BE5693A1B2CACF800A999A7 /* TimerTriggerController.xib in Resources */,
 				F05E7E0318BEF399005E25F6 /* Images.xcassets in Resources */,
 				2B522A5A1B2756B500A86676 /* BasicTriggerController.xib in Resources */,
 				F0C47C2216C23FD3002EFADA /* adafruit_logo2012-embossDark.png in Resources */,
@@ -500,6 +507,7 @@
 				F02F6EEB1A247F160080FFDF /* ControllerViewController.swift in Sources */,
 				F0A94FDC19DBE68800C8A37E /* Constants.swift in Sources */,
 				F0B7D14319F1081C00DFDDBE /* BLEDevice.swift in Sources */,
+				2BE569381B2CAC8B00A999A7 /* TimerTriggerController.swift in Sources */,
 				F0DBB56A19F4625800CB91E1 /* DeviceCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

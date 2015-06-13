@@ -12,6 +12,7 @@ class TimeLapseController: UIViewController, UITextFieldDelegate {
     
     var delegate:UARTViewControllerDelegate?
     private let buttonPrefix = "!B"
+    @IBOutlet weak var minIntervalLabel: UILabel!
     @IBOutlet weak var shutterButton: UIButton!
     @IBOutlet weak var exposureLabel: UILabel!
     @IBOutlet weak var exposureTextField: UITextField!
@@ -41,6 +42,8 @@ class TimeLapseController: UIViewController, UITextFieldDelegate {
     
     override func viewWillDisappear(animated: Bool) {
         // Stop updates if we're returning to main view
+        timer.invalidate()
+
         if self.isMovingFromParentViewController() {
             //Stop receiving app active notification
             NSNotificationCenter.defaultCenter().removeObserver(self, name: UIApplicationDidBecomeActiveNotification, object: nil)
@@ -75,17 +78,22 @@ class TimeLapseController: UIViewController, UITextFieldDelegate {
     func fireShutter()
     {
         framesShot++
-        framesFired.text = "Frames fired: \(framesShot)"
-        if framesShot != frames
+        if framesShot <= frames
         {
+            framesFired.text = "Frames fired: \(framesShot)"
             var str = NSString(string:buttonPrefix + TIMELAPSE + "1" ) // a = basic mode
-            let data = NSData(bytes: str.UTF8String, length: str.length)
+            var data = NSData(bytes: str.UTF8String, length: str.length)
+            delegate?.sendData(appendCRC(data))
+            str = NSString(string:buttonPrefix + TIMELAPSE + "0" ) // a = basic mode
+            data = NSData(bytes: str.UTF8String, length: str.length)
             delegate?.sendData(appendCRC(data))
         }
         else
         {
             framesShot = 0
+            framesFired.text = "Frames fired: \(framesShot)"
             timer.invalidate()
+            shutterButton.setTitle("Start", forState: .Normal)
             shutterButton.backgroundColor = UIColor.blueColor()
         }
     }
